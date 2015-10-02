@@ -1,0 +1,58 @@
+{
+	"app" : 
+	{
+		"js" : 
+		{
+			"sources" : [
+				"app/scripts/*.js"
+			],
+			"jsHintReporter" : "jshint-stylish",
+			"tmpDirectory" : ".temporal/scripts",
+			"concat" : "all.min.js"
+		},		
+		"css" : 
+		{
+			"sources" : [    
+    			"app/styles/*.styl",
+    			"app/styles/*.css"
+  			],
+			"tmpDirectory" : ".temporal/styles",
+			"concat" : "all.min.css"
+		},
+		"server" : [".temporal", "app"]
+	},
+	"deploy" : 
+	{
+		"from" : 
+		[
+			"app/**",
+			"!app/scripts/{concat,concat/**}",
+			"!app/styles/{concat,concat/**}",
+			"!app/styles/**/*.{styl,scss}",
+			"!app/{vendor,vendor/**}",
+			".temporal/**",		
+			"!app/.bowerrc"
+		],
+		"to" : "deploy",
+		"server" : ["deploy"]
+	},
+	"files"	 :
+	{
+		"cleanPaths" : 
+		[
+			"deploy/*"
+		],
+		"watch":
+		{
+			"html" : ["app/**/*.html"],
+			"styles" : ["app/styles/**/*.{styl,css}"],
+			"js" : ["app/scripts/**/*.js"],
+			"img" : ["app/images/**/*"]
+		},
+		"concat" : 
+		{
+			"js":"app/scripts/concat/**",
+			"css":"app/styles/concat/**"
+		}
+	}
+}
