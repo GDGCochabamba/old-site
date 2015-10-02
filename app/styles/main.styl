@@ -62,8 +62,11 @@ _black-regular = #4D4D4D
 _sky-blue = #00BDD6
 
 _green-dark = #00903B
+_green-regular = #00B74C
 
 _red-dark = #FF183E
+
+_white = #FFFFFF
   //agregando estilos generales
 body
   margin 0
@@ -79,6 +82,8 @@ ul
 p
   padding 0
   margin 0
+img
+  width 100%
 
 h1,h2,h3,h4,h5,h6
   padding 0
@@ -137,5 +142,91 @@ h1,h2,h3,h4,h5,h6
             display block
 .about-what
     background-color #4E4E4E
+
+
+    padding 0
+    margin 0
+
+.cloud, .hill, .build
+    position absolute
+    margin-right auto
+    margin-left auto
+    right 0
+    left 0
+    font-size 0
+    text-align center
+    bottom 0
+.align
+    margin-right auto
+    margin-left auto
+    max-width 74em
+
+.about-us
+    background-color _sky-blue
+    position relative
+    padding-top 4rem
+    text-align center
+    min-height 42rem
+    max-height 32rem
+    .cloud
+        max-width 90%
+        top 0
+        margin-top 50px
+        display table
+    .build
+        max-width 70%
+    .about-us__logo
+        position relative
+        margin-right auto
+        margin-left  auto
+        display table
+        img
+            height 200px
+    .card
+        font-size 1rem
+        display table
+        margin 0 auto
+        width 29rem
+        position relative
+        box-shadow 2px 2px 17px 0px _black-dark
+        &__content
+            padding 6.5rem 0
+            background-color _white
+        &__description
+            background-color _green-dark
+            color _white
+            position relative
+            padding .5rem 0
+            .icon-calendar, .card__data
+                display inline-block
+                vertical-align  middle
+            .card__data
+                width 83%
+                text-align left
+                .card__title
+                    text-transform uppercase
+                    font-weight 400
+                    font-size 2rem
+                .card__date
+                    font-style oblique
+                    font-weight 300
+                    font-size 1.3rem
+            .icon-calendar
+                width 15%
+                font-size 3.5rem
+            .card__button
+                position absolute
+                top -50px
+                right 20
+                background-color _red-dark
+                padding 1.5rem 1.2rem
+                border-radius 50%
+                font-size 2rem
+                box-shadow 2px 4px 7px -1px _black-dark
+
+.about-what, .about-do, .vision, .videos
+    position relative
+
+
 
 
