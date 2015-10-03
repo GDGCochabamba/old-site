@@ -120,18 +120,19 @@ h1,h2,h3,h4,h5,h6
     text-transform uppercase
     color _white
     border-bottom 2px solid _white
-//iamgenes SVG
-.cloud, .hill, .build
-    position absolute
-    margin-right auto
-    margin-left auto
-    right 0
-    left 0
-    font-size 0
-    text-align center
-    bottom 0
-.hill--size
-    width 155%
+
+// Imagen de la ciudad y montania
+.city
+    background-image url("../svg/hill.svg")
+    margin-top 1em
+    background-size auto 100%
+    padding-top 5em
+    background-repeat repeat-x
+    background-position bottom
+    &__buildings
+        font-size 0
+        margin 0 auto -4px
+        width 70%
 
 //Componente CARD
 .card
@@ -264,15 +265,6 @@ h1,h2,h3,h4,h5,h6
     background-size 100%
     position relative
     text-align center
-    min-height 62rem
-    max-height 62rem
-    .cloud
-        max-width 90%
-        top 0
-        margin-top 50px
-        display table
-    .build
-        max-width 70%
     .about-us__logo
         position relative
         margin-right auto
@@ -283,7 +275,6 @@ h1,h2,h3,h4,h5,h6
 
 .about-what
     background-color _black-regular
-    min-height 65rem
     text-align center
     &__video
         display table
@@ -291,7 +282,6 @@ h1,h2,h3,h4,h5,h6
 
 .about-do
     background-color _green-regular
-    min-height 75rem
     &__card
         margin 3rem 0
     &__eventos
@@ -307,7 +297,6 @@ h1,h2,h3,h4,h5,h6
 
 .vision
     background-color _black-dark
-    min-height 60rem
     text-align center
     &__link
         margin 1rem 0 2rem 0
@@ -315,7 +304,6 @@ h1,h2,h3,h4,h5,h6
 //Pagina eventos.html
 .event
     background-color _green-regular
-    min-height 95rem
     &__principal
         margin-top 2rem
         margin-bottom 3rem
