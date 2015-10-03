@@ -88,14 +88,136 @@ img
 h1,h2,h3,h4,h5,h6
   padding 0
   margin 0
+.section-space
+    padding-top 4em
+  //Componente de Subtitulo y texto
 .title-box
     color white
+    text-align center
+    max-width 59rem
+    margin 0 auto
     .title-box__main
         text-transform uppercase
         font-size 4em
         font-weight 200
-        .title-box__text
-            font-size 1.25em
+        padding-bottom 1rem
+    .title-box__text
+        font-size 1.25em
+        text-align left
+  //Alineacion general
+.align
+    margin-right auto
+    margin-left auto
+    max-width 74em
+
+//declarando una misma propiedad a los sections
+.about-what, .about-do, .vision, .videos
+    position relative
+//componente  link
+.link-content
+    text-transform uppercase
+    color _white
+    border-bottom 2px solid _white
+//iamgenes SVG
+.cloud, .hill, .build
+    position absolute
+    margin-right auto
+    margin-left auto
+    right 0
+    left 0
+    font-size 0
+    text-align center
+    bottom 0
+.hill--size
+    width 155%
+
+//Componente CARD
+.card
+    margin 0 auto
+    min-width 10rem
+    max-width 32rem
+    position relative
+    box-shadow 2px 2px 17px 0px _black-dark
+    &__container
+        overflow hidden
+        .card__content
+            padding 6.5rem 0
+            background-color _white
+        .card__description
+            background-color _green-dark
+            color _white
+            position relative
+            padding .5rem
+            display table
+            width 100%
+            .icon-calendar, .card__data, .card__button
+                display table-cell
+                vertical-align  middle
+            .card__data
+                text-align left
+                padding-left .5rem
+                .card__title
+                    text-transform uppercase
+                    font-weight 400
+                    font-size 2rem
+                .card__date
+                    font-style oblique
+                    font-weight 300
+                    font-size 1.3rem
+            .icon-calendar
+                font-size 3.5rem
+            .card__button
+                display table
+                color _white
+                padding 1.2rem .8rem 1.2rem 1rem
+                border-radius 50%
+                top -50px
+                box-shadow 2px 4px 7px -1px _black-dark
+                background-color _red-dark
+                position relative
+                font-size 2rem
+                right 20px
+
+//Componentede de Videos
+
+.video
+    width 29rem
+    height 14rem
+    background-color #0059bc
+    position relative
+    &__content
+        background-color #0059bc
+    &__like
+        color _white
+        position absolute
+        bottom 5px
+        right 5px
+        p
+            display inline-block
+            margin-right 2rem
+            &:last-child
+                margin-right 1rem
+
+.social-network__list
+    margin 0
+    padding 0
+    .social-network__item
+        display inline-block
+        font-size 1.4rem
+        border 1px solid white
+        border-radius .2em
+        padding .2em
+        background-color white
+        margin-left .2em
+    .social-network__link
+        color #414042
+        display block
+        span
+            text-align center
+            text-shadow 0px 1px
+    .social-network__item--size
+        font-size 2rem
+
 .page__header
     margin 0
     .nav-site
@@ -119,47 +241,11 @@ h1,h2,h3,h4,h5,h6
                         color white
         .social-network
             float right
-            .social-network__list
-                margin 0
-                padding 0
-                .social-network__item
-                    display inline-block
-                    font-size 1.4rem
-                    border 1px solid white
-                    border-radius .2em
-                    padding .2em
-                    background-color white
-                    margin-left .2em
-                    .social-network__link
-                        color #414042
-                        display block
-                        span
-                            text-align center
-                            text-shadow 0px 1px
         &:after
             content ""
             clear both
             display block
-.about-what
-    background-color #4E4E4E
 
-
-    padding 0
-    margin 0
-
-.cloud, .hill, .build
-    position absolute
-    margin-right auto
-    margin-left auto
-    right 0
-    left 0
-    font-size 0
-    text-align center
-    bottom 0
-.align
-    margin-right auto
-    margin-left auto
-    max-width 74em
 
 .about-us
     background-color _sky-blue
@@ -182,51 +268,37 @@ h1,h2,h3,h4,h5,h6
         display table
         img
             height 200px
-    .card
-        font-size 1rem
+    .about-us__card
+        padding 0 .5rem
+
+.about-what
+    background-color _black-regular
+    min-height 65rem
+    text-align center
+    &__video
         display table
+        margin 3rem auto
+
+.about-do
+    background-color _green-regular
+    min-height 75rem
+    &__card
+        margin 3rem
+    &__eventos
         margin 0 auto
-        width 29rem
-        position relative
-        box-shadow 2px 2px 17px 0px _black-dark
-        &__content
-            padding 6.5rem 0
-            background-color _white
-        &__description
-            background-color _green-dark
+        display table
+        text-align center
+        span
             color _white
-            position relative
-            padding .5rem 0
-            .icon-calendar, .card__data
-                display inline-block
-                vertical-align  middle
-            .card__data
-                width 83%
-                text-align left
-                .card__title
-                    text-transform uppercase
-                    font-weight 400
-                    font-size 2rem
-                .card__date
-                    font-style oblique
-                    font-weight 300
-                    font-size 1.3rem
-            .icon-calendar
-                width 15%
-                font-size 3.5rem
-            .card__button
-                position absolute
-                top -50px
-                right 20
-                background-color _red-dark
-                padding 1.5rem 1.2rem
-                border-radius 50%
-                font-size 2rem
-                box-shadow 2px 4px 7px -1px _black-dark
+            font-size 3rem
+        .link-content
+            display block
+            margin-top .5rem
 
-.about-what, .about-do, .vision, .videos
-    position relative
-
-
-
+.vision
+    background-color _black-dark
+    min-height 60rem
+    text-align center
+    &__link
+        margin 1rem 0 2rem 0
 
