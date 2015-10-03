@@ -55,6 +55,9 @@
 .icon-youtube:before {
   content: "\ea99";
 }
+.icon-three-bars:before {
+    content: "\f05e";
+}
   //Agregando paleta de colores
 _black-dark = #3F3E40
 _black-regular = #4D4D4D
@@ -88,6 +91,9 @@ img
 h1,h2,h3,h4,h5,h6
     padding 0
     margin 0
+
+.dnone
+    display none
 .section-space
     padding-top 4em
 
@@ -103,8 +109,9 @@ h1,h2,h3,h4,h5,h6
         font-weight 200
         padding-bottom 1rem
     .title-box__text
-        font-size .8rem
+        font-size 1rem
         text-align left
+        line-height 1.5rem
   //Alineacion general
 .align
     margin-right auto
@@ -162,7 +169,7 @@ h1,h2,h3,h4,h5,h6
                 .card__title
                     text-transform uppercase
                     font-weight 400
-                    font-size 2rem
+                    font-size 1.6rem
                 .card__date
                     font-style oblique
                     font-weight 300
@@ -231,6 +238,11 @@ h1,h2,h3,h4,h5,h6
 
 .page__header
     margin 0
+    .nav-menu--movil
+        float left
+        color _white
+        span
+            font-size 2rem
     .nav-site
         background-color #414042
         padding 1rem
