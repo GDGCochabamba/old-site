@@ -129,16 +129,15 @@ h1,h2,h3,h4,h5,h6
     padding-top 5em
     background-repeat repeat-x
     background-position bottom
+    min-height 80px
     &__buildings
         font-size 0
         margin 0 auto -4px
-        width 70%
+        min-width 300px
+        width 50%
 
 //Componente CARD
 .card
-    margin 0 auto
-    min-width 10rem
-    max-width 32rem
     position relative
     box-shadow 2px 2px 17px 0px _black-dark
     &__container
@@ -264,15 +263,10 @@ h1,h2,h3,h4,h5,h6
     background-color _sky-blue
     background-image url('../svg/clouds.svg')
     background-size 100%
-    position relative
-    text-align center
-    .about-us__logo
-        position relative
-        margin-right auto
-        margin-left  auto
-        display table
+    &__logo
+        margin 1em 0 4em
         img
-            height 200px
+            height 300px
 
 .about-what
     background-color _black-regular
