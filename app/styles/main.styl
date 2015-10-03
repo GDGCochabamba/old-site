@@ -149,6 +149,16 @@ h1,h2,h3,h4,h5,h6
         background-size auto 101%
         height 20px
         position relative
+
+//Imagen de solo Edificios
+.building
+    background-image url("../svg/building.svg")
+    margin-top 1em
+    background-size auto 100%
+    padding-top 5em
+    background-repeat repeat-x
+    background-position bottom
+    min-height 80px
 //Componente CARD
 .card
     position relative
@@ -175,6 +185,8 @@ h1,h2,h3,h4,h5,h6
                     text-transform uppercase
                     font-weight 400
                     font-size 1.6rem
+                .card__title--light
+                    font-weight 300
                 .card__date
                     font-style oblique
                     font-weight 300
@@ -196,6 +208,8 @@ h1,h2,h3,h4,h5,h6
                 span
                     line-height 2.3em
                     margin-left 8px
+        .card__description--c-black
+            background-color _black-dark
 .card--size1
     max-width 59rem
     .card__content
@@ -323,7 +337,6 @@ h1,h2,h3,h4,h5,h6
 //Pagina eventos.html
 .event
     background-color _green-regular
-    padding-bottom 2rem
     &__principal
         margin-top 2rem
         margin-bottom 3rem
@@ -343,6 +356,27 @@ h1,h2,h3,h4,h5,h6
             text-align center
             .event__item
                 margin-bottom 2rem
+
+@media only screen and (min-width: 45em)
+    .dnone
+        display block
+    .nav-menu--movil
+        display none
+    .event__principal
+        max-width 59em
+        margin-right auto
+        margin-left auto
+@media only screen and (min-width: 60em)
+    .event__list
+        font-size  0
+        .event__item
+            display inline-block
+            min-width 32%
+            margin-right 1rem
+            &:last-child
+                margin-right 0
+            .card
+                font-size 1rem
 @media only screen and (min-width: 87.5em)
     .about-us
         &__card
