@@ -56,7 +56,10 @@
   content: "\ea99";
 }
 .icon-three-bars:before {
-    content: "\f05e";
+  content: "\f05e";
+}
+.icon-play:before {
+  content: "\ea15";
 }
   //Agregando paleta de colores
 _black-dark = #3F3E40
@@ -142,7 +145,12 @@ h1,h2,h3,h4,h5,h6
         margin 0 auto -4px
         min-width 300px
         width 50%
-
+    &__path
+        background-image url("../svg/linea.svg")
+        background-repeat repeat-x
+        background-size auto 101%
+        height 20px
+        position relative
 //Componente CARD
 .card
     position relative
@@ -158,7 +166,7 @@ h1,h2,h3,h4,h5,h6
             position relative
             padding .5rem
             display table
-            width 98%
+            width 100%
             .icon-calendar, .card__data, .card__button
                 display table-cell
                 vertical-align  middle
@@ -176,16 +184,20 @@ h1,h2,h3,h4,h5,h6
             .icon-calendar
                 font-size 3.5rem
             .card__button
-                display table
                 color _white
-                padding 1.4rem .8rem .8rem 1.2rem
                 border-radius 50%
-                top -50px
                 box-shadow 2px 4px 7px -1px _black-dark
                 background-color _red-dark
-                position relative
-                font-size 2rem
-                right 20px
+                float right
+                font-size 1.7em
+                margin-right 1em
+                margin-top -1.5em                
+                height 60px
+                width 60px
+                text-align center
+                span
+                    line-height 2.3em
+                    margin-left 8px
 .card--size1
     max-width 59rem
     .card__content
@@ -202,6 +214,7 @@ h1,h2,h3,h4,h5,h6
         font-size 2rem
         position relative
         bottom -145px
+        margin 0
 //Componente redes sociales
 .social-network__list
     margin 0
@@ -301,6 +314,7 @@ h1,h2,h3,h4,h5,h6
 //Pagina eventos.html
 .event
     background-color _green-regular
+    padding-bottom 2rem
     &__principal
         margin-top 2rem
         margin-bottom 3rem
