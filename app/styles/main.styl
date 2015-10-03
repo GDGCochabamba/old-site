@@ -121,10 +121,8 @@ h1,h2,h3,h4,h5,h6
     margin-left auto
     max-width 74em
     padding 0 1rem
-
-//declarando una misma propiedad a los sections
-.about-what, .about-do, .vision, .videos, .event
     position relative
+
 //componente  link
 .link-content
     text-transform uppercase
@@ -280,6 +278,9 @@ h1,h2,h3,h4,h5,h6
     background-color _sky-blue
     background-image url('../svg/clouds.svg')
     background-size 100%
+    &__card
+        margin 0 auto
+        max-width 25rem
     &__logo
         margin 1em 0 4em
         img
@@ -295,7 +296,8 @@ h1,h2,h3,h4,h5,h6
 .about-do
     background-color _green-regular
     &__card
-        margin 3rem 0
+        margin 3rem auto
+        max-width 25rem
     &__eventos
         margin 0 auto
         display table
@@ -337,4 +339,10 @@ h1,h2,h3,h4,h5,h6
             .event__item
                 margin-bottom 2rem
 
-//Aplicando
+@media only screen and (min-width: 87.5em)
+    .about-us
+        &__card
+            position absolute
+            right 0
+            top 50%
+            width 25em
