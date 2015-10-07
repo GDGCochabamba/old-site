@@ -98,7 +98,7 @@ h1,h2,h3,h4,h5,h6
 .dnone
     display none
 .section-space
-    padding-top 4em
+    padding-top 6rem
 
  //Componente de Subtitulo y texto
 .title-box
@@ -153,6 +153,14 @@ h1,h2,h3,h4,h5,h6
 //Imagen de solo Edificios
 .building
     background-image url("../svg/building.svg")
+    margin-top 1em
+    background-size auto 100%
+    padding-top 5em
+    background-repeat repeat-x
+    background-position bottom
+    min-height 80px
+.hills
+    background-image url("../svg/hill.svg")
     margin-top 1em
     background-size auto 100%
     padding-top 5em
@@ -215,7 +223,7 @@ h1,h2,h3,h4,h5,h6
     .card__content
         padding 12.5rem 0
 
-//Componentede de Videos
+//Componente de de Videos
 .video
     &__thumbnail
         margin 0
@@ -228,6 +236,7 @@ h1,h2,h3,h4,h5,h6
             top 50%
             transform translateY(-50%)
             width 100%
+
 
 //Componente redes sociales
 .social-network__list
@@ -255,6 +264,10 @@ h1,h2,h3,h4,h5,h6
 
 .page__header
     margin 0
+    box-shadow 0px 0px 15px 3px _black-dark
+    position fixed
+    z-index 100
+    width 100%
     .nav-menu--movil
         float left
         color _white
@@ -275,7 +288,6 @@ h1,h2,h3,h4,h5,h6
                     font-weight 500
                     font-size 1rem
                     display inline-block
-                    text-transform uppercase
                     border-bottom 2px solid white
                     .nav-site__link
                         color white
@@ -357,6 +369,16 @@ h1,h2,h3,h4,h5,h6
             .event__item
                 margin-bottom 2rem
 
+//Pagina videos.html
+.videos
+    background-color _sky-blue
+    &__container
+        display table
+        margin 3rem auto
+        .video
+            margin-bottom 1rem
+
+
 @media only screen and (min-width: 45em)
     .dnone
         display block
@@ -377,6 +399,34 @@ h1,h2,h3,h4,h5,h6
                 margin-right 0
             .card
                 font-size 1rem
+
+    .videos
+        height 100vh
+        .videos__container
+            font-size 0
+            text-align center
+            .videos-left, .videos-right
+                display inline-block
+                vertical-align middle
+                .video
+                    font-size 1rem
+                    margin-bottom .5rem
+            .videos-left
+                width 67%
+                margin-right .5rem
+                .video
+                    width 460px
+            .videos-right
+                width 31%
+                .video
+                    width 219px
+                    .size
+                        font-size 3rem
+        .hills
+            position fixed
+            bottom 0
+            width 100%
+
 @media only screen and (min-width: 87.5em)
     .about-us
         &__card
