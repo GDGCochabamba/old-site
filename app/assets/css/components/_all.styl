@@ -1,0 +1,209 @@
+//Componente de Subtitulo y texto
+.title-box
+   color white
+   text-align center
+   max-width 59rem
+   margin 0 auto
+   .title-box__main
+       text-transform uppercase
+       font-size 2.5rem
+       font-weight 200
+       padding-bottom 1rem
+   .title-box__text
+       font-size 1rem
+       text-align left
+       line-height 1.5rem
+ //Alineacion general
+.align
+   margin-right auto
+   margin-left auto
+   max-width 74em
+   padding 0 1rem
+   position relative
+
+//componente  link
+.link-content
+   text-transform uppercase
+   color _white
+   border-bottom 2px solid _white
+
+// Imagen de la ciudad y montania
+.city
+   background-image url("../images/hill.svg")
+   margin-top 1em
+   background-size auto 100%
+   padding-top 5em
+   background-repeat repeat-x
+   background-position bottom
+   min-height 80px
+   overflow hidden
+   &__buildings
+       font-size 0
+       margin 0 auto -4px
+       min-width 300px
+       width 50%
+   &__path
+       background-image url("../images/linea.svg")
+       background-repeat repeat-x
+       background-size auto 101%
+       height 20px
+       position relative
+
+//Imagen de solo Edificios
+.building
+   background-image url("../images/building.svg")
+   margin-top 1em
+   background-size auto 100%
+   padding-top 5em
+   background-repeat repeat-x
+   background-position bottom
+   min-height 80px
+.hills
+   background-image url("../images/hill.svg")
+   margin-top 1em
+   background-size auto 100%
+   padding-top 5em
+   background-repeat repeat-x
+   background-position bottom
+   min-height 80px
+
+//Componente CARD
+.card
+   position relative
+   box-shadow 2px 2px 17px 0px _black-dark
+   &__container
+       overflow hidden
+       .card__content
+           font-size 0
+           background-color _white
+       .card__description
+           background-color _green-dark
+           color _white
+           position relative
+           padding .5rem
+           display table
+           width 100%
+           .icon-calendar, .card__data, .card__button
+               display table-cell
+               vertical-align  middle
+           .card__data
+               text-align left
+               padding-left .5rem
+               .card__title
+                   text-transform uppercase
+                   font-weight 400
+                   font-size 1.6rem
+               .card__title--light
+                   font-weight 300
+               .card__date
+                   font-style oblique
+                   font-weight 300
+                   font-size 1.3rem
+           .icon-calendar
+               font-size 3.5rem
+           .card__button
+               color _white
+               border-radius 50%
+               box-shadow 2px 4px 7px -1px _black-dark
+               background-color _red-dark
+               float right
+               font-size 1.7rem
+               margin-right 1rem
+               margin-top -1.5rem
+               height 60px
+               width 60px
+               text-align center
+               span
+                   line-height 2.3em
+                   margin-left 8px
+       .card__description--c-black
+           background-color _black-dark
+.card--size1
+   max-width 59rem
+   .card__content
+       padding 12.5rem 0
+
+//Componente de de Videos
+.video
+   &__thumbnail
+       margin 0
+       position relative
+       figcaption
+           color white
+           font-size 4.5rem
+           text-align center
+           position absolute
+           top 50%
+           transform translateY(-50%)
+           width 100%
+
+
+//Componente redes sociales
+.social-network__list
+   margin 0
+   padding 0
+   .social-network__item
+       display inline-block
+       font-size 1.4rem
+       border 1px solid white
+       border-radius .2em
+       background-color white
+       margin-left .2em
+   .social-network__link
+       color #414042
+       display block
+       padding .3rem
+       span
+           display block
+           text-align center
+       .icon-facebook
+           position relative
+           top -2px
+   .social-network__item--size
+       font-size 2rem
+
+.page__header
+   margin 0
+   box-shadow 0px 0px 15px 3px _black-dark
+   position fixed
+   z-index 100
+   width 100%
+   .nav-menu--movil
+       float left
+       color _white
+       span
+           font-size 2rem
+   .nav-site
+       background-color #414042
+       padding .5rem
+       .nav-site__menu
+           float left
+           .nav-site__list
+               margin 0
+               padding 0
+               .nav-site__item
+                   text-transform uppercase
+                   margin-right 2.5em
+                   font-weight 500
+                   font-size 1rem
+                   display inline-block
+                   border-bottom 2px solid white
+                   vertical-align middle
+                   .nav-site__link
+                       color white
+                       padding .2rem .3rem
+                       display block
+                   .nav-site__link--size
+                       width 25px
+               .nav-site__item--dnone
+                   display none
+               .nav-site__item--sb
+                   border-bottom 0
+                   margin-right 1rem
+
+       .social-network
+           float right
+       &:after
+           content ""
+           clear both
+           display block

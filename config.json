@@ -1,36 +1,35 @@
 {
-	"app" : 
+	"app" :
 	{
-		"js" : 
+		"js" :
 		{
 			"sources" : [
-				"app/scripts/*.js"
+				"app/assets/js/**/*.js"
 			],
 			"jsHintReporter" : "jshint-stylish",
-			"tmpDirectory" : ".temporal/scripts",
-			"concat" : "all.min.js"
-		},		
-		"css" : 
+			"tmpDirectory" : ".temporal/assets/js",
+			"entry": "app/assets/js/entry.js"
+		},
+		"css" :
 		{
-			"sources" : [    
-    			"app/styles/*.styl",
-    			"app/styles/*.css"
+			"sources" : [
+    			"app/assets/css/*.styl",
+					"!app/assets/css/_*.styl"
   			],
-			"tmpDirectory" : ".temporal/styles",
-			"concat" : "all.min.css"
+			"tmpDirectory" : ".temporal/assets/css"
 		},
 		"server" : [".temporal", "app"]
 	},
-	"deploy" : 
+	"deploy" :
 	{
-		"from" : 
+		"from" :
 		[
 			"app/**",
-			"!app/scripts/{concat,concat/**}",
-			"!app/styles/{concat,concat/**}",
-			"!app/styles/**/*.{styl,scss}",
+			"!app/assets/css/**/*.{styl,scss}",
+			"!app/assets/js/**/*.js",
+			"app/assets/js/bundle.js",
 			"!app/{vendor,vendor/**}",
-			".temporal/**",		
+			".temporal/**",
 			"!app/.bowerrc"
 		],
 		"to" : "deploy",
@@ -38,21 +37,16 @@
 	},
 	"files"	 :
 	{
-		"cleanPaths" : 
+		"cleanPaths" :
 		[
 			"deploy/*"
 		],
 		"watch":
 		{
 			"html" : ["app/**/*.html"],
-			"styles" : ["app/styles/**/*.{styl,css}"],
-			"js" : ["app/scripts/**/*.js"],
-			"img" : ["app/images/**/*"]
-		},
-		"concat" : 
-		{
-			"js":"app/scripts/concat/**",
-			"css":"app/styles/concat/**"
+			"styles" : ["app/assets/css/**/*.{styl,css}"],
+			"js" : ["app/assets/js/**/*.js"],
+			"img" : ["app/assets/images/**/*"]
 		}
 	}
 }

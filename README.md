@@ -1,3 +1,1 @@
-#Initial layout with Gulp configuration
-
-Basic layout based on Web Starter Kit and Gulp configuration
+# Frontend de nuestro sitio para el GDG Cochabamba

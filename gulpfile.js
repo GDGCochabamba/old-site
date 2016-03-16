@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     del = require('del'),
     config = require('./config.json'),
     reload = browserSync.reload,
+    webpack = require('webpack-stream'),
     $ = gulpPlugins,
     AUTOPREFIXER_BROWSERS = [
       'ie >= 10',
@@ -18,6 +19,10 @@ var gulp = require('gulp'),
       'bb >= 10'
     ];
 
+gulp.task('clean', function(){
+    return del(config.files.cleanPaths);
+});
+
 gulp.task('jshint', function () {
   return gulp.src( config.app.js.sources )
     .pipe(reload({stream: true, once: true}))
@@ -26,47 +31,57 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-gulp.task('styles', function () {
+gulp.task('styles', ['clean'],function () {
   return gulp.src(config.app.css.sources)
     .pipe($.sourcemaps.init())
     .pipe($.changed(config.app.css.tmpDirectory, {extension: '.css'}))
     .pipe($.stylus())
-    .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))    
-    .pipe($.sourcemaps.write())    
+    .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest(config.app.css.tmpDirectory))
     .pipe($.size({title: 'Styles'}));
 });
 
-gulp.task('concat-js', function(){
-  return gulp.src(config.files.concat.js)            
-    .pipe($.changed(config.app.js.tmpDirectory, {extension: '.js'}))
-    .pipe($.if('*.js', $.concat( config.app.js.concat )))  
-    .pipe($.if('*.js',gulp.dest(config.app.js.tmpDirectory)))   
-    .pipe($.size({title: 'Concat JS size'}));
+gulp.task('webpack', function() {
+  return gulp.src(config.app.js.entry)
+          .pipe(webpack({
+            output: {
+              filename: 'bundle.js'
+            },
+            devtool: 'source-map'
+          }))
+          .pipe(gulp.dest(config.app.js.tmpDirectory));
 });
 
 gulp.task('concat-css', function(){
-  return gulp.src(config.files.concat.css)            
-    .pipe($.changed(config.app.css.tmpDirectory, {extension: '.css'}))    
-    .pipe($.if('*.css', $.concat( config.app.css.concat )))    
+  return gulp.src(config.files.concat.css)
+    .pipe($.changed(config.app.css.tmpDirectory, {extension: '.css'}))
+    .pipe($.if('*.css', $.concat( config.app.css.concat )))
     .pipe($.if('*.css', gulp.dest(config.app.css.tmpDirectory)))
     .pipe($.size({title: 'Concat CSS size'}));
 });
 
-gulp.task('server', ['styles','concat-js','concat-css'], function () {
+gulp.task('server', ['styles','webpack','clean'], function () {
   browserSync({
-    notify: false,    
-    logPrefix: 'Initial Layout',    
-    server: config.app.server
+    open: false,
+    notify: false,
+    logPrefix: 'Initial Layout',
+    server: {
+      baseDir: config.app.server,
+      middleware: function(req, res, next) {
+        if(/\S\.{1}(jpg|jpeg|png|svg|css|js|map|ttf|eot|woff)/.test(req.url) !== true){
+          req.url = '/index.html';
+        }
+        return next();
+      }
+    }
   });
 
   gulp.watch(config.files.watch.html, reload);
   gulp.watch(config.files.watch.styles, ['styles', reload]);
-  gulp.watch(config.files.watch.js, ['jshint',reload]);
+  gulp.watch(config.files.watch.js, ['jshint', 'webpack',reload]);
   gulp.watch(config.files.watch.img, reload);
 });
-
-gulp.task('clean', del.bind(null, config.files.cleanPaths, {dot: true}));
 
 gulp.task('server:deploy', ['clean'],function () {
   return gulp.src(config.deploy.from, {

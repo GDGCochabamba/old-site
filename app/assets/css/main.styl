@@ -1,0 +1,234 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?nplm6g');
+  src:url('fonts/icomoon.eot?nplm6g#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?nplm6g') format('truetype'),
+  url('fonts/icomoon.woff?nplm6g') format('woff'),
+  url('fonts/icomoon.svg?nplm6g#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  //icono de lista
+.icon-list:before {
+  content: "\e600";
+}
+  //icono de ventana de chat
+.icon-chat:before {
+  content: "\e601";
+}
+  //icono de sobre de carta
+.icon-envelope:before {
+  content: "\e605";
+}
+  //icono de me gusta
+.icon-like:before {
+  content: "\e602";
+}
+  //icono de calendario
+.icon-calendar:before {
+  content: "\e953";
+}
+.icon-google-plus:before {
+  content: "\ea88";
+}
+.icon-facebook:before {
+  content: "\ea8c";
+}
+.icon-youtube:before {
+  content: "\ea99";
+}
+.icon-three-bars:before {
+  content: "\f05e";
+}
+.icon-play:before {
+  content: "\ea15";
+}
+
+
+@import 'base/_all.styl'
+
+@import 'components/_all.styl'
+
+.about-us
+    background-color _sky-blue
+    background-image url('../images/clouds.svg')
+    background-size 100%
+    &__card
+        margin 0 auto
+        max-width 25rem
+    &__logo
+        margin 1em 0 4em
+        img
+            height 300px
+
+.about-what
+    background-color _black-regular
+    text-align center
+    &__video
+        display table
+        margin 3rem auto
+    &__icon
+        text-align center
+        .about-what__icon-content
+            margin 1rem auto .5rem
+            width 68px
+
+.about-do
+    background-color _green-regular
+    &__card
+        margin 3rem auto
+        max-width 25rem
+    &__eventos
+        margin 3rem auto 0
+        display table
+        text-align center
+        span
+            color _white
+            font-size 3rem
+        .link-content
+            display block
+            margin-top .5rem
+
+.vision
+    background-color _black-dark
+    text-align center
+    &__link
+        margin 1rem 0 2rem 0
+
+//Pagina eventos.html
+.event
+    background-color _green-regular
+    &__principal
+        margin-top 2rem
+        margin-bottom 3rem
+    &__list-container
+        max-width 59rem
+        font-size 1rem
+        margin 0 auto
+        text-align center
+        .event__past
+            font-size 1.5rem
+            color _white
+            text-transform uppercase
+            font-weight 300
+            margin-bottom 1rem
+        .event__list
+            font-size 0
+            text-align center
+            .event__item
+                margin-bottom 2rem
+    &__building
+        margin-top 5rem
+        font-size 0
+    .building
+        margin-top 5rem
+//Pagina videos.html
+.videos
+    background-color _sky-blue
+    &__container
+        display table
+        margin 3rem auto
+        .video
+            margin-bottom 1rem
+    &__hill
+        margin-top 5rem
+        font-size 0
+    .hills
+        margin-top 5rem
+
+
+@media only screen and (min-width: 45em)
+    .dnone
+        display block
+    .vision
+        overflow hidden
+    .city--size
+        padding-top 29em
+        margin-right -41em
+    .social-network
+        margin-top .5rem
+    .building-dnone
+        display block
+    .hill-dnone
+        display block
+    .nav-menu--movil
+        display none
+    .section-space--videos
+        padding-top 0
+    .event
+        &__principal
+            max-width 59em
+            margin-right auto
+            margin-left auto
+        .building
+            display none
+    .videos
+        .align
+            padding-top 8rem
+        .hills
+            display none
+@media only screen and (min-width: 60em)
+    .event__list
+        font-size  0
+        .event__item
+            display inline-block
+            width 19rem
+            margin-right 1rem
+            &:last-child
+                margin-right 0
+            .card
+                font-size 1rem
+
+    .videos
+        height 100vh
+        position relative
+        display table
+        .videos__container
+            font-size 0
+            text-align center
+            .videos-left, .videos-right
+                display inline-block
+                vertical-align middle
+                .video
+                    font-size 1rem
+                    margin-bottom .5rem
+            .videos-left
+                width 67%
+                margin-right .5rem
+                .video
+                    width 460px
+            .videos-right
+                width 31%
+                .video
+                    width 219px
+                    .size
+                        font-size 3rem
+        .align
+            margin-bottom 2rem
+        &__hill
+            position relative
+            top 3.5rem
+            bottom 0
+
+
+@media only screen and (min-width: 87.5em)
+    .about-us
+        &__card
+            position absolute
+            right 0
+            top 50%
+            width 25em
