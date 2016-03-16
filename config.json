@@ -16,7 +16,8 @@
     			"app/assets/css/*.styl",
 					"!app/assets/css/_*.styl"
   			],
-			"tmpDirectory" : ".temporal/assets/css"
+			"tmpDirectory" : ".temporal/assets/css",
+			"entry": "app/assets/css/main.styl"
 		},
 		"server" : [".temporal", "app"]
 	},

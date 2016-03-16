@@ -32,9 +32,8 @@ gulp.task('jshint', function () {
 });
 
 gulp.task('styles', ['clean'],function () {
-  return gulp.src(config.app.css.sources)
+  return gulp.src(config.app.css.entry)
     .pipe($.sourcemaps.init())
-    .pipe($.changed(config.app.css.tmpDirectory, {extension: '.css'}))
     .pipe($.stylus())
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe($.sourcemaps.write())
