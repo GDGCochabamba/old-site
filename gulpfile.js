@@ -68,7 +68,7 @@ gulp.task('server', ['styles','webpack','clean'], function () {
     server: {
       baseDir: config.app.server,
       middleware: function(req, res, next) {
-        if(/\S\.{1}(jpg|jpeg|png|svg|css|js|map|ttf|eot|woff)/.test(req.url) !== true){
+        if(/\S\.{1}(jpg|jpeg|png|svg|css|js|map|ttf|eot|woff|html)/.test(req.url) !== true){
           req.url = '/index.html';
         }
         return next();
@@ -82,7 +82,7 @@ gulp.task('server', ['styles','webpack','clean'], function () {
   gulp.watch(config.files.watch.img, reload);
 });
 
-gulp.task('server:deploy', ['clean'],function () {
+gulp.task('deploy-files', ['clean'],function () {
   return gulp.src(config.deploy.from, {
     dot: true
   }).pipe(gulp.dest(config.deploy.to))
@@ -90,6 +90,22 @@ gulp.task('server:deploy', ['clean'],function () {
     .pipe($.if('**/*.css', $.csso()))
     .pipe($.if('**/*.js', $.uglify({preserveComments: 'some'})))
     .pipe(gulp.dest(config.deploy.to));
+});
+
+gulp.task('server:deploy', ['deploy-files'],function () {
+  browserSync({
+    open: false,
+    notify: false,
+    server: {
+      baseDir: "deploy",
+      middleware: function(req, res, next) {
+        if(/\S\.{1}(jpg|jpeg|png|svg|css|js|map|ttf|eot|woff|html)/.test(req.url) !== true){
+          req.url = '/index.html';
+        }
+        return next();
+      }
+    }
+  });
 });
 
 // Build production files, the default task

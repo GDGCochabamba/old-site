@@ -7,8 +7,8 @@
     "stylus",
     "angularjs"
   ],
-  "scripts" : {
-    "start" : "gulp server"
+  "scripts": {
+    "start": "gulp server"
   },
   "author": "GDG Cochabamba <cochabamba@gdg.com.bo>",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "gulp-changed": "^1.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^1.1.0",
+    "gulp-gzip": "^1.2.0",
     "gulp-if": "^2.0.0",
     "gulp-jshint": "^2.0.0",
     "gulp-load-plugins": "^1.2.0",

@@ -4,34 +4,34 @@
 		"js" :
 		{
 			"sources" : [
-				"app/assets/js/**/*.js"
+				"app/**/*.js"
 			],
 			"jsHintReporter" : "jshint-stylish",
-			"tmpDirectory" : ".temporal/assets/js",
-			"entry": "app/assets/js/entry.js"
+			"tmpDirectory" : ".temporal/app",
+			"entry": "client/app/entry.js"
 		},
 		"css" :
 		{
 			"sources" : [
-    			"app/assets/css/*.styl",
-					"!app/assets/css/_*.styl"
+    			"client/css/*.styl",
+					"!client/css/_*.styl"
   			],
-			"tmpDirectory" : ".temporal/assets/css",
-			"entry": "app/assets/css/main.styl"
+			"tmpDirectory" : ".temporal/css",
+			"entry": "client/css/main.styl"
 		},
-		"server" : [".temporal", "app"]
+		"server" : [".temporal", "client"]
 	},
 	"deploy" :
 	{
 		"from" :
 		[
-			"app/**",
-			"!app/assets/css/**/*.{styl,scss}",
-			"!app/assets/js/**/*.js",
-			"app/assets/js/bundle.js",
-			"!app/{vendor,vendor/**}",
+			"client/**",
+			"!client/app/css/**/*.{styl,scss}",
+			"!client/app/**/*.js",
+			"client/app/bundle.js",
+			"!client/{vendor,vendor/**}",
 			".temporal/**",
-			"!app/.bowerrc"
+			"!client/.bowerrc"
 		],
 		"to" : "deploy",
 		"server" : ["deploy"]
@@ -44,10 +44,10 @@
 		],
 		"watch":
 		{
-			"html" : ["app/**/*.html"],
-			"styles" : ["app/assets/css/**/*.{styl,css}"],
-			"js" : ["app/assets/js/**/*.js"],
-			"img" : ["app/assets/images/**/*"]
+			"html" : ["client/**/*.html"],
+			"styles" : ["client/css/**/*.{styl,css}"],
+			"js" : ["client/app/**/*.js"],
+			"img" : ["client/images/**/*"]
 		}
 	}
 }
