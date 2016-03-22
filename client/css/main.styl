@@ -95,15 +95,8 @@
         display block
     .vision
         overflow hidden
-    .city--size
-        padding-top 29em
-        margin-right -41em
     .social-network
         margin-top .5rem
-    .building-dnone
-        display block
-    .hill-dnone
-        display block
     .nav-menu--movil
         display none
     .section-space--videos
@@ -121,6 +114,9 @@
         .hills
             display none
 @media only screen and (min-width: 60em)
+    .city
+      &__buildings
+        width 70%
     .event__list
         font-size  0
         .event__item
@@ -165,9 +161,12 @@
 
 
 @media only screen and (min-width: 87.5em)
+    .city
+      &__buildings
+        width 50%
     .about-us
-        &__card
-            position absolute
-            right 0
-            top 50%
-            width 25em
+      &__card
+        position absolute
+        right 5em
+        top 50%
+        max-width 29em
