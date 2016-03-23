@@ -13,7 +13,8 @@
         title: '@',
         date: '@',
         image: '@',
-        url: '@'
+        url: '@',
+        classDescription: '@'
       },
       controller: CardController,
       controllerAs: 'card'

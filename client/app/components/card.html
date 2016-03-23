@@ -1,8 +1,8 @@
-<div class="card">
+<article class="card">
   <figure class="card__image">
     <img src="{{::card.image}}"/>
   </figure>
-  <div class="card__description">
+  <div class="card__description {{::card.classDescription}}" >
     <span class="icon-calendar"></span>
     <div class="card__data">
         <h3 class="card__title">{{::card.title}}</h3>
@@ -12,4 +12,4 @@
         <span class="icon-list"></span>
     </a>
   </div>
-</div>
+</article>
