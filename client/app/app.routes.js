@@ -22,13 +22,3 @@
     $locationProvider.html5Mode(true);
   }
 })();
-
-
-// .when('/eventos', {
-//     templateUrl: 'assets/templates/pages/otro.html',
-//     controller: 'AvengersController',
-//     controllerAs: 'vm',
-//     resolve: {
-//         moviesPrepService: moviesPrepService
-//     }
-// })
