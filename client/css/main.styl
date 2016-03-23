@@ -6,6 +6,9 @@
 
 @media only screen and (min-width: 25.06em)
   .events
+    &__content
+      margin 0 auto
+      max-width 50em
     &__principal
       .card__image
         max-height 18rem
@@ -34,6 +37,17 @@
         max-height 26rem
     &__list-item
       max-width 48%
+    .section__content
+      max-width 35em
+  .videos
+    &__list
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+      margin 0 auto
+      width 70%
+    &__list-item
+      width 48%
 @media only screen and (min-width: 75em)
   .city
     &__buildings
