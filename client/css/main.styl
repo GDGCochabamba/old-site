@@ -4,75 +4,43 @@
 
 @import 'pages/_all.styl'
 
-// @media only screen and (min-width: 45em)
-//   .desktop
-//     display block
-//   .vision
-//     overflow hidden
-//   .event
-//     &__principal
-//       max-width 59em
-//       margin-right auto
-//       margin-left auto
-//   .videos
-//     .align
-//       padding-top 8rem
-//     .hills
-//       display none
-// @media only screen and (min-width: 60em)
-//     .city
-//       &__buildings
-//         width 70%
-//     .event__list
-//         font-size  0
-//         .event__item
-//           display inline-block
-//           width 19rem
-//           margin-right 1rem
-//           &:last-child
-//             margin-right 0
-//           .card
-//             font-size 1rem
-//
-//     .videos
-//         height 100vh
-//         position relative
-//         display table
-//         .videos__container
-//             font-size 0
-//             text-align center
-//             .videos-left, .videos-right
-//                 display inline-block
-//                 vertical-align middle
-//                 .video
-//                     font-size 1rem
-//                     margin-bottom .5rem
-//             .videos-left
-//                 width 67%
-//                 margin-right .5rem
-//                 .video
-//                     width 460px
-//             .videos-right
-//                 width 31%
-//                 .video
-//                     width 219px
-//                     .size
-//                         font-size 3rem
-//         .align
-//             margin-bottom 2rem
-//         &__hill
-//             position relative
-//             top 3.5rem
-//             bottom 0
-//
-//
-// @media only screen and (min-width: 87.5em)
-//     .city
-//       &__buildings
-//         width 50%
-//     .about-us
-//       &__card
-//         position absolute
-//         right 5em
-//         top 50%
-//         max-width 29em
+@media only screen and (min-width: 25.06em)
+  .events
+    &__principal
+      .card__image
+        max-height 18rem
+    &__list
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+    &__list-item
+      max-width 70%
+      margin 0 auto
+@media only screen and (min-width: 45em)
+  body
+     padding-top 70px
+  .page__header
+    bottom auto
+    top 0
+  .desktop
+    display block
+  .section
+    &__content
+      margin 0 auto
+      max-width 50em
+  .events
+    &__principal
+      .card__image
+        max-height 26rem
+    &__list-item
+      max-width 48%
+@media only screen and (min-width: 75em)
+  .city
+    &__buildings
+      width 50%
+  .about-us
+    &__card
+      position absolute
+      right 3em
+      top 30%
+      max-width 29em
